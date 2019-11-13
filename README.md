@@ -81,6 +81,22 @@ Custom comparison for checking finish state.
 useSuspensible(data, data => data.status === 'finish')
 ```
 
+You can have any number of `useSuspensible` in a Component.
+
+```jsx
+useSuspensible(data1)
+useSuspensible(data2)
+useSuspensible(data3, data => data.status === 'finish')
+
+return (
+  <>
+    <h1>{data1.content}</h1>
+    <h1>{data2.content}</h1>
+    <h1>{data3.content}</h1>
+  </>
+)
+```
+
 TypeScript >= 3.7
 
 ```typescript
