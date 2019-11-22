@@ -9,9 +9,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-<div align="center">
-  <img width="700" height="500" src="https://github.com/crimx/use-suspensible/raw/master/assets/logo.svg?raw=true" />
-</div>
+![use-suspensible](./assets/use-suspensible.png)
 
 React hooks that can make any data suspensible.
 
