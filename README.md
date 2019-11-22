@@ -19,9 +19,9 @@ If you follow the Relay Suspense pattern you need to [add wrappers to async logi
 
 This means:
 
-- It can only apply to logic based on Promise.
+- It can only apply to Promise based async logic.
 - You have to write logic and use data in a specific way.
-- When you successfully `read()` a piece of data, it means the data is "fetched" but not necessary "usable"(though you can write business logic in a conventional way to make sure they are the same). You still need to add logic to check e.g. variation/validation of the data.
+- When you successfully `read()` a piece of data, it means the data is "fetched" but not necessary "usable"(unless you write business logic in a conventional way to make sure they are the same). You still need to add logic to check e.g. variation/validation of the data.
 
 [use-suspensible](https://github.com/crimx/use-suspensible) does not care how you implement the business logic. It only cares about if the data is usable or not. This makes it a universal solution for Suspense.
 
