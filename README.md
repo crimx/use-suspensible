@@ -9,13 +9,21 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-React hook that can make any data suspensible.
+React hooks that can make any data suspensible.
 
 ## Why?
 
-If you follow the Relay Suspense pattern you need to add wrappers to async logic then use `read()` to get data in Components.
+If you follow the Relay Suspense pattern you need to [add wrappers to async logic](https://github.com/relayjs/relay-examples/blob/205dfb195c770e7cd3977116654bd69c91d03b90/issue-tracker/src/JSResource.js#L21-L42) then use [read()](https://github.com/relayjs/relay-examples/blob/master/issue-tracker/src/JSResource.js#L54-L717) to [get data in Components](https://github.com/relayjs/relay-examples/blob/205dfb195c770e7cd3977116654bd69c91d03b90/issue-tracker/src/SuspenseImage.js#L27).
 
-With [use-suspensible](https://github.com/crimx/use-suspensible) you don't need to wrap async logic then put `read` everywhere. Simply fetch and use data as usual.
+This means:
+
+- It can only applied to logic based on Promise.
+- You have to write logic and use data in a specific way.
+- When you successfully `read()` a piece of data, it means the data is "fetched" but not necessary "usable"(though you can write business logic in a conventional way to make sure they are the same). You still need to add logic to check e.g. variation/validation of the data.
+
+[use-suspensible](https://github.com/crimx/use-suspensible) does not care how you implement the business logic. It only cares about if the data is usable or not. This makes it a universal solution for Suspense.
+
+With [use-suspensible](https://github.com/crimx/use-suspensible) you simply fetch and use data as usual/you like. It just works (with almost no cost).
 
 ## Installation
 
